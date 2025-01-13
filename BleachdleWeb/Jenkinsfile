@@ -6,6 +6,8 @@ pipeline {
         DOCKERHUB_REPO = 'ilangimel/bleachdle-web-app' 
         DOCKERHUB_USERNAME = credentials('DOCKERHUB_USERNAME') // Secret for Docker Hub username
         DOCKERHUB_PASSWORD = credentials('DOCKERHUB_PASSWORD') // Secret for Docker Hub password
+
+        // Enviroment variables for DB
         DB_HOST = credentials('DB_HOST')
         DB_USER = credentials('DB_USER')
         DB_PASSWORD = credentials('DB_PASSWORD')
@@ -13,6 +15,10 @@ pipeline {
         PORT = '5000' // Port used by your application
         IMAGE_NAME = 'ilangimel/bleachdle-web-app' // Update with your image name
         VERSION = "${BUILD_NUMBER}" // Build versioning using Jenkins build number
+
+        //Enviorment Variables API URL, FLASK_ENV
+        API_URL = credentials('API_URL')
+        FLASK_ENV = credentials('FLASK_ENV')
 
         // Environment variables to configure Docker correctly
         DOCKER_CLI_EXPERIMENTAL = "enabled"  // Enable Docker experimental features (optional)
