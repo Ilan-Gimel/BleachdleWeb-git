@@ -53,7 +53,7 @@ pipeline {
             steps {
                 script {
                     // Assuming your docker-compose.yml is located in the path provided
-                    dir('/Users/ilangimelfarb/Documents/GitHub/BleachdleWeb-git/BleachdleWeb') {  
+                    dir("${WORKSPACE}/BleachdleWeb") {  
                         sh '''
                             echo "Bringing down existing containers"
                             /usr/local/bin/docker-compose down  # Use the full path here
@@ -90,7 +90,7 @@ pipeline {
         stage('Build and Push Docker Image') {
             steps {
                 script {
-                    dir('/Users/ilangimelfarb/Documents/GitHub/BleachdleWeb-git/BleachdleWeb') { // Make sure this is the correct directory
+                    dir("${WORKSPACE}/BleachdleWeb") { // Make sure this is the correct directory
                         sh '''
                             echo "Building the Docker image using Docker Compose"
                             /usr/local/bin/docker-compose build web
