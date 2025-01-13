@@ -59,6 +59,7 @@ pipeline {
                             /usr/local/bin/docker-compose down  # Use the full path here
                             /usr/local/bin/docker-compose pull
                             echo "Starting Docker Compose"
+                            DB_HOST=${DB_HOST} DB_USER=${DB_USER} DB_PASSWORD=${DB_PASSWORD} DB_NAME=${DB_NAME} API_URL=${API_URL} FLASK_ENV=${FLASK_ENV} \
                             /usr/local/bin/docker-compose up -d
                         '''
                     }
