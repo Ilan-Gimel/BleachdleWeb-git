@@ -11,22 +11,7 @@ services:
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_NAME=${DB_NAME}
       - API_URL=${API_URL}
-    depends_on:
-      - db  # Ensures that the web service waits for the db to start
     command: ["flask", "run", "--host=0.0.0.0"]  # To make sure Flask listens on all interfaces
-
-  db:
-    image: mysql:8 
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: ${DB_NAME}
-    ports:
-      - "3307:3306"
-    volumes:
-      - db_data:/var/lib/mysql
-
-volumes:
-  db_data:
 
 
 
