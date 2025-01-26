@@ -5,7 +5,6 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - FLASK_ENV=${FLASK_ENV}
       - DB_HOST=${DB_HOST}  # Points to the db service name defined below
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}

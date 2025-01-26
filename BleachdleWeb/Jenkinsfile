@@ -18,9 +18,8 @@ pipeline {
         IMAGE_NAME = 'ilangimel/bleachdle-web-app' // Update with your image name
         VERSION = "${BUILD_NUMBER}" // Build versioning using Jenkins build number
 
-        // Environment Variables API URL, FLASK_ENV
+        // Environment Variables API URL
         API_URL = credentials('API_URL')
-        FLASK_ENV = credentials('FLASK_ENV')
 
         // EC2 Instance variables
         EC2_HOST = "ec2-13-61-184-63.eu-north-1.compute.amazonaws.com"  // EC2 host (public IP or DNS)
@@ -101,7 +100,6 @@ pipeline {
                         echo "DB_PASSWORD=${DB_PASSWORD}" >> ${WORKSPACE}/BleachdleWeb/.env
                         echo "DB_NAME=${DB_NAME}" >> ${WORKSPACE}/BleachdleWeb/.env
                         echo "API_URL=${API_URL}" >> ${WORKSPACE}/BleachdleWeb/.env
-                        echo "FLASK_ENV=${FLASK_ENV}" >> ${WORKSPACE}/BleachdleWeb/.env
                         echo ".env file created"
                     """
                 }
