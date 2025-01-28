@@ -100,6 +100,9 @@ pipeline {
                         echo "DB_PASSWORD=${DB_PASSWORD}" >> ${WORKSPACE}/BleachdleWeb/.env
                         echo "DB_NAME=${DB_NAME}" >> ${WORKSPACE}/BleachdleWeb/.env
                         echo "API_URL=${API_URL}" >> ${WORKSPACE}/BleachdleWeb/.env
+                        echo "DOCKERHUB_USERNAME=${DOCKERHUB_USERNAME}" >> ${WORKSPACE}/BleachdleWeb/.env
+                        echo "DOCKERHUB_PASSWORD=${DOCKERHUB_PASSWORD}" >> ${WORKSPACE}/BleachdleWeb/.env
+                        echo "API_URL=${API_URL}" >> ${WORKSPACE}/BleachdleWeb/.env
                         echo ".env file created"
                     """
                 }
