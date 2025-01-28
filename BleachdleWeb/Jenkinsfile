@@ -22,7 +22,7 @@ pipeline {
         API_URL = credentials('API_URL')
 
         // EC2 Instance variables
-        EC2_HOST = "ec2-13-61-184-63.eu-north-1.compute.amazonaws.com"  // EC2 host (public IP or DNS)
+        EC2_HOST = "ec2-16-170-227-145.eu-north-1.compute.amazonaws.com"  // EC2 host (public IP or DNS)
     }
 
     stages {
